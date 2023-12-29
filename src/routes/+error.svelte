@@ -1,1 +1,8 @@
-<h1>Error</h1>
+<script>
+	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+
+	onMount(() => {
+		goto('/');
+	});
+</script>
