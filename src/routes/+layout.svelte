@@ -1,3 +1,7 @@
+<script>
+	import 'virtual:windi.css';
+</script>
+
 <nav>
 	<a href="/">回首頁</a>
 	<a href="/create">設置題目</a>
