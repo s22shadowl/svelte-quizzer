@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { setTitle } from '../+layout.svelte';
-	import { steps } from './constants';
+	import { steps } from '../../constants';
 	import Initial from './Initial.svelte';
 	import SetConfigs from './SetConfigs.svelte';
 	import EditQuestions from './EditQuestions.svelte';

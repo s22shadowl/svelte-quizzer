@@ -1,5 +1,5 @@
 <script>
-	import { steps } from './constants';
+	import { steps } from '../../constants';
 	import { status } from './store';
 
 	const onButtonClick = () => {

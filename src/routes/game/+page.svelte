@@ -19,3 +19,7 @@
 </svelte:head>
 
 <h1>{currentPage}</h1>
+
+<!-- TODO: 選擇題組 UI -->
+<!-- TODO: 答題、顯示答案、計分 UI -->
+<!-- TODO: 遊戲結果 UI -->
