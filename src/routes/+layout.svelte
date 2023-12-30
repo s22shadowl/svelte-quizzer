@@ -1,6 +1,4 @@
 <script context="module" lang="ts">
-	import 'virtual:windi.css';
-
 	const defaultPage = '首頁';
 
 	export const setTitle = (currentPage: string = defaultPage) => {
@@ -30,3 +28,6 @@
 		</footer>
 	</div>
 </div>
+
+<style windi:preflights:global windi:safelist:global>
+</style>
