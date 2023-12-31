@@ -35,6 +35,10 @@
 		});
 		goto('/game');
 	};
+
+	const onJoinButtonClick = () => {
+		goto('/player');
+	};
 </script>
 
 <svelte:head>
@@ -46,8 +50,10 @@
 	<!-- <img class="max-w-sm" src={Icon} alt="An alt text" /> -->
 	<div class="mb-4">
 		<!-- <p class="text-center">請掃描 QR Code 或輸入以下網址參加遊戲：</p> -->
-		<p class="text-center">請輸入以下網址參加遊戲：</p>
-		<p class="text-center">https://svelte-quizzer.vercel.app/player/</p>
+		<!-- <p class="text-center">請輸入以下網址參加遊戲：</p> -->
+		<p class="text-center">請點擊此按鈕參加遊戲：</p>
+		<button class="bg-blue-300 p-2 mt-4 w-100px" on:click={onJoinButtonClick}>加入</button>
+		<!-- <p class="text-center">https://svelte-quizzer.vercel.app/player/</p> -->
 	</div>
 	<div>
 		<p class="text-center text-2xl">目前玩家：{currentPlayers.join('、')}</p>
