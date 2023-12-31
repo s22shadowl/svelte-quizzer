@@ -14,9 +14,15 @@ export enum gameStatus {
 	FinalResult = 6
 }
 
-enum questionType {
+export enum questionType {
 	select = 1,
 	shortAnswer = 2,
+	quickAnswer = 3
+}
+
+export enum messageType {
+	join = 1,
+	answer = 2,
 	quickAnswer = 3
 }
 
@@ -26,7 +32,9 @@ type question = {
 	defaultScore: number;
 	type: questionType;
 	options?: string[];
-	answer: string | number; // 待確認是否使用
+	answer?: string | number; // 待確認是否使用
+	image_url?: string;
+	video_url?: string;
 };
 
 export type questionsData = {
