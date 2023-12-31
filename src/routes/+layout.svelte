@@ -4,6 +4,8 @@
 	export const setTitle = (currentPage: string = defaultPage) => {
 		return `Svelte Quizzer -${currentPage}`;
 	};
+
+	export const prerender = false;
 </script>
 
 <svelte:head>
