@@ -6,7 +6,8 @@
 	import { gameStatus } from '../../constants';
 	const currentPage = '參加遊戲';
 
-	const socket = io('http://localhost:4040');
+	// const socket = io('http://localhost:4040');
+	const socket = io('https://svelte-quizzer-server.onrender.com');
 
 	let userNickname = '';
 
