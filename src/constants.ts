@@ -14,6 +14,12 @@ export enum gameStatus {
 	FinalResult = 6
 }
 
+export enum Mode2AnsweringStatus {
+	selectQuestion = 0,
+	showQuestion = 1,
+	calculated = 2
+}
+
 export enum questionType {
 	select = 1,
 	shortAnswer = 2,
@@ -37,6 +43,10 @@ type question = {
 	video_url?: string;
 };
 
+type question2024 = Omit<question, 'title' | 'id'> & {
+	description: string;
+};
+
 export type questionsData = {
 	groups: {
 		title: string;
@@ -44,6 +54,12 @@ export type questionsData = {
 		questions: question[];
 	}[];
 };
+
+export type questionsData2024 = {
+	title: string;
+	id: number;
+	data: question2024;
+}[];
 
 export type boardData = {
 	currentQuestion: question;
