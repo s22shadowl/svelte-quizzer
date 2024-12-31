@@ -15,9 +15,13 @@
 	$: currentStatus = $status;
 	$: hasJoinednow = $hasJoined;
 
-	const handleHostMessage = (message: { status: gameStatus; content: any }) => {
+	const handleHostMessage = (message: { status: gameStatus; content: any, isReturningPlayer?: boolean }) => {
 		if (message.status && message.status !== currentStatus) {
 			status.set(message.status);
+		}
+
+		if (message.isReturningPlayer) {
+			status.set(gameStatus.Questioning)
 		}
 	};
 

@@ -10,13 +10,22 @@
 	$: currentPlayers = $playersData.map((player) => player.id);
 
 	const handleHostMessage = (message: { name: string; context?: string; type: messageType }) => {
-		if (message.type === messageType.join) {
-			playersData.update((currentP) => [
-				...currentP,
-				{ id: message.name, score: 0, currentAnswer: '預設' }
-			]);
-		}
-	};
+	if (message.type === messageType.join) {
+		playersData.update((currentP) => {
+			// 檢查 currentP 中是否已經有與 message.name 相同的 id
+			const isPlayerExist = currentP.some((player) => player.id === message.name);
+			if (!isPlayerExist) {
+				// 如果不存在，添加新玩家
+				return [
+					...currentP,
+					{ id: message.name, score: 0, currentAnswer: '預設', index: currentP.length }
+				];
+			}
+			// 如果已存在，返回原始陣列
+			return currentP;
+		});
+	}
+};
 
 	// const socket = io('http://localhost:4040');
 	const socket = io('https://svelte-quizzer-server.onrender.com');
